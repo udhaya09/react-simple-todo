@@ -9,12 +9,16 @@ const ToDoTable = (props) => {
                     <th scope='col'>#</th>
                     <th scope='col'>Description</th>
                     <th scope='col'>Assigned</th>
+                    <th scope='col'>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <ToDoRowItem id={props.todos[0].id} description={props.todos[0].description} assigned={props.todos[0].assigned} />
-                <ToDoRowItem id={props.todos[1].id} description={props.todos[1].description} assigned={props.todos[1].assigned} />
-                <ToDoRowItem id={props.todos[2].id} description={props.todos[2].description} assigned={props.todos[2].assigned} />
+                {props.todos.map(todo => (
+                    <ToDoRowItem key={todo.id} id={todo.id} description={todo.description} assigned={todo.assigned} 
+                    deleteToDo={props.deleteToDo}
+                    editToDo={props.editToDo}/>
+                ))}
+
             </tbody>
         </table>
     )
