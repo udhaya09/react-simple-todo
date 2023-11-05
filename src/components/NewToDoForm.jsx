@@ -9,7 +9,7 @@ const NewToDoForm = (props) => {
     useEffect(() => {
 
         
-        if (props.isEdit == true && props.id !== '') {
+        if (props.isEdit === true && props.id !== '') {
             console.log("onload id present")
             // Set state values from props when the component is loaded
             setDescription(props.description || ''); // Default to an empty string if props.description is undefined
@@ -19,7 +19,7 @@ const NewToDoForm = (props) => {
 
 
 
-    }, [props.description, props.assigned, props.id]);
+    }, [props.description, props.assigned, props.id, props.isEdit]);
 
     const submitToDo = () => {
 
