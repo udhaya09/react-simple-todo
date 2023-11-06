@@ -1,6 +1,12 @@
 import React from 'react'
 
-const ToDoRowItem = (props) => {
+export const ToDoRowItem: React.FC<{
+    id: number,
+    description: string,
+    assigned: string,
+    deleteToDo: Function
+    editToDo: Function
+}> = (props) => {
 
     return (
         <tr>
@@ -14,5 +20,3 @@ const ToDoRowItem = (props) => {
         </tr>
     )
 }
-
-export default ToDoRowItem
